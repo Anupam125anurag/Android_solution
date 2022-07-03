@@ -41,7 +41,7 @@ print("Pentesting - Drozer completed")
 
 #run cts - Pre certification
 
-os.system("/var/lib/jenkins/workspace/Android_Framework_Pixel_git/android-cts/tools/cts-tradefed run cts -m CtsPermissionTestCases")
+os.system("sudo /var/lib/jenkins/workspace/Android_Framework_Pixel_git/android-cts/tools/cts-tradefed run cts -m CtsPermissionTestCases")
 
 #echo <password> | sudo -S <cmd> 
 
