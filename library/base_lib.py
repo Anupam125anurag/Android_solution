@@ -227,7 +227,7 @@ def swipe_from_left():
 
 def take_screenshot(name):
     try:
-        d.screenshot(f"/home/idm/Desktop/HDK855/Screenshots/{name}.png")
+        d.screenshot("/home/idm/Desktop/HDK855/Screenshots/{name}.png")
         return True
     except Exception as e:
         print("Exception occured: ",str(e))
