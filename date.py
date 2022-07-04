@@ -22,7 +22,7 @@ old="/var/lib/jenkins/workspace/Android_Framework_Pixel_git/android-cts/results/
 print(old)
 with ZipFile(old, 'r') as zipObj:
    # Extract all the contents of zip file in current directory
-   zipObj.extractall()
+   zipObj.extractall("/var/lib/jenkins/workspace/Android_Framework_Pixel_git/")
   
 #new="/var/lib/jenkins/workspace/Android_Framework_Pixel_git/cts_results.zip"
 #os.rename(old,new)
