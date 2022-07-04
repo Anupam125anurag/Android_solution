@@ -155,7 +155,7 @@ def open_quick_settings():
 #----
 
 def enter_text(text):
-    os.system(f"adb shell input text {text}")
+    os.system("adb shell input text {text}")
 
 def go_back():
     try:
