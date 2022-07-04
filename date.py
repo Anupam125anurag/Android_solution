@@ -1,4 +1,5 @@
 from datetime import datetime
+from zipfile import ZipFile
 import os
 import pytz
 
@@ -19,7 +20,11 @@ for file in os.listdir("/var/lib/jenkins/workspace/Android_Framework_Pixel_git/a
   
 old="/var/lib/jenkins/workspace/Android_Framework_Pixel_git/android-cts/results/" + file2
 print(old)
-new="/var/lib/jenkins/workspace/Android_Framework_Pixel_git/cts_results.zip"
-os.rename(old,new)
+with ZipFile(old, 'r') as zipObj:
+   # Extract all the contents of zip file in current directory
+   zipObj.extractall()
+  
+#new="/var/lib/jenkins/workspace/Android_Framework_Pixel_git/cts_results.zip"
+#os.rename(old,new)
 
 
