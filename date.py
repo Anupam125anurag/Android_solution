@@ -14,6 +14,7 @@ for file in os.listdir("/var/lib/jenkins/workspace/Android_Framework_Pixel_git/a
   if file.startswith(d):
     #print(file)
     file2=file
+    print(file2)
     break
         
      
