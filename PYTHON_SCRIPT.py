@@ -15,7 +15,7 @@ connect = os.popen("adb connect "+device).read()
 #sanity test
 
 #os.system("robot tests/contacts_testcases.robot")
-#os.system("robot tests/settings_testcases.robot")
+os.system("robot tests/settings_testcases.robot")
 
 
 # gradle build apk and install apk
