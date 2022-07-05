@@ -20,24 +20,14 @@ def LAUNCH_SETTINGS():
 def ENABLE_WIFI():
     try:
         time.sleep(2)
-        ele = base_lib.element_exists(settings_locators.network_option, settings_locators.settings_options_class_name)
+        base_lib.click_on(settings_locators.network_option, settings_locators.settings_options_class_name)
+        time.sleep(3)
+        base_lib.click_on(settings_locators.internet_option, settings_locators.settings_options_class_name)
         time.sleep(2)
-        if ele:
-            base_lib.click_on(settings_locators.network_option, settings_locators.settings_options_class_name)
-            time.sleep(3)
-        else:
-            base_lib.click_on_id("com.android.settings:id/search_action_bar", "android.view.ViewGroup")
-            time.sleep(2)
-            os.system("adb shell input text " + "Network")
-            time.sleep(2)
-            base_lib.go_back()
-            base_lib.click_on(settings_locators.network_option, settings_locators.settings_options_class_name)
-            time.sleep(3)
-        
         result = base_lib.element_exists(settings_locators.status_off, settings_locators.wifi_click_switch_id)
-        print(result)
-        if result == True:
-            base_lib.click_on_text_id(settings_locators.status_off, settings_locators.wifi_click_switch_id)
+        time.sleep(2)
+        
+        base_lib.click_on_id("android:id/switch_widget","android.widget.Switch")
         time.sleep(2)
 
         return True
@@ -50,85 +40,62 @@ def ENABLE_WIFI():
 def DISABLE_WIFI():
     try:
         time.sleep(2)
-        ele = base_lib.element_exists(settings_locators.network_option, settings_locators.settings_options_class_name)
-        if ele:
-            base_lib.click_on(settings_locators.network_option, settings_locators.settings_options_class_name)
-            time.sleep(3)
-        else:
-            base_lib.click_on_id("com.android.settings:id/search_action_bar", "android.view.ViewGroup")
-            time.sleep(2)
-            os.system("adb shell input text " + "Network")
-            time.sleep(2)
-            base_lib.go_back()
-            base_lib.click_on(settings_locators.network_option, settings_locators.settings_options_class_name)
-            time.sleep(3)
-
-        result = base_lib.element_exists(settings_locators.status_on, settings_locators.wifi_click_switch_id)
-        if result == True:
-            base_lib.click_on_text_id(settings_locators.status_on, settings_locators.wifi_click_switch_id)
+        base_lib.click_on(settings_locators.network_option, settings_locators.settings_options_class_name)
+        time.sleep(3)
+        base_lib.click_on(settings_locators.internet_option, settings_locators.settings_options_class_name)
         time.sleep(2)
+        result = base_lib.element_exists(settings_locators.status_on, settings_locators.wifi_click_switch_id)
+        time.sleep(2)
+        
+        base_lib.click_on_id("android:id/switch_widget","android.widget.Switch")
+        time.sleep(2)
+
         return True
 
     except Exception as e:
         print("Exception occured: ", str(e))
         return False
+
 
 @keyword
 def ENABLE_BLUETOOTH():
     try:
         time.sleep(2)
-        ele = base_lib.element_exists(settings_locators.connected_device_option, settings_locators.settings_options_class_name)
-        time.sleep(1)
-        if ele:
-            base_lib.click_on(settings_locators.connected_device_option, settings_locators.settings_options_class_name)
-            time.sleep(3)
-        else:
-            base_lib.click_on_id("com.android.settings:id/search_action_bar", "android.view.ViewGroup")
-            time.sleep(2)
-            os.system("adb shell input text " + "connected")
-            time.sleep(2)
-            base_lib.go_back()
-            base_lib.click_on(settings_locators.connected_device_option, settings_locators.settings_options_class_name)
-            time.sleep(3)
-
-        base_lib.click_on(settings_locators.connection_preference_option, settings_locators.settings_options_class_name)
-        base_lib.click_on(settings_locators.bluetooth_option, settings_locators.settings_options_class_name)
+        base_lib.click_on(settings_locators.connected_device_option, settings_locators.settings_options_class_name)
         time.sleep(3)
-        result_bt = base_lib.element_exists(settings_locators.status_off, settings_locators.bluetooth_switch_id)
-        if result_bt == True:
-            base_lib.click_on_text_id(settings_locators.status_off, settings_locators.bluetooth_switch_id)
+        base_lib.click_on(settings_locators.connection_preference_option, settings_locators.settings_options_class_name)
         time.sleep(2)
+        base_lib.click_on(settings_locators.bluetooth_option, settings_locators.settings_options_class_name)
+        time.sleep(2)
+        result = base_lib.element_exists(settings_locators.status_off, settings_locators.wifi_click_switch_id)
+        time.sleep(2)
+        
+        base_lib.click_on_id("android:id/switch_widget","android.widget.Switch")
+        time.sleep(2)
+
         return True
 
     except Exception as e:
         print("Exception occured: ", str(e))
         return False
 
+
 @keyword
 def DISABLE_BLUETOOTH():
     try:
         time.sleep(2)
-        ele = base_lib.element_exists(settings_locators.connected_device_option, settings_locators.settings_options_class_name)
-        time.sleep(2)
-        if ele:
-            base_lib.click_on(settings_locators.connected_device_option, settings_locators.settings_options_class_name)
-            time.sleep(3)
-        else:
-            base_lib.click_on_id("com.android.settings:id/search_action_bar", "android.view.ViewGroup")
-            time.sleep(2)
-            os.system("adb shell input text " + "connected")
-            time.sleep(2)
-            base_lib.go_back()
-            base_lib.click_on(settings_locators.connected_device_option, settings_locators.settings_options_class_name)
-            time.sleep(3)
-
-        base_lib.click_on(settings_locators.connection_preference_option, settings_locators.settings_options_class_name)
-        base_lib.click_on(settings_locators.bluetooth_option, settings_locators.settings_options_class_name)
+        base_lib.click_on(settings_locators.connected_device_option, settings_locators.settings_options_class_name)
         time.sleep(3)
-        result_bt = base_lib.element_exists(settings_locators.status_on, settings_locators.bluetooth_switch_id)
-        if result_bt == True:
-            base_lib.click_on_text_id(settings_locators.status_on, settings_locators.bluetooth_switch_id)
+        base_lib.click_on(settings_locators.connection_preference_option, settings_locators.settings_options_class_name)
         time.sleep(2)
+        base_lib.click_on(settings_locators.bluetooth_option, settings_locators.settings_options_class_name)
+        time.sleep(2)
+        result = base_lib.element_exists(settings_locators.status_on, settings_locators.wifi_click_switch_id)
+        time.sleep(2)
+        
+        base_lib.click_on_id("android:id/switch_widget","android.widget.Switch")
+        time.sleep(2)
+
         return True
 
     except Exception as e:
@@ -183,6 +150,7 @@ def VERIFY_BUILD_ID():
 @keyword
 def ENABLE_ADAPTIVE_BRIGHTNESS():
     try:
+        base_lib.swipe_screen()
         time.sleep(2)
         ele = base_lib.element_exists(settings_locators.display_option_text, settings_locators.display_option_id)
         if ele:
@@ -191,20 +159,16 @@ def ENABLE_ADAPTIVE_BRIGHTNESS():
         else:
             base_lib.click_on_id("com.android.settings:id/search_action_bar", "android.view.ViewGroup")
             time.sleep(2)
-            os.system("adb shell input text " + "display")
+            os.system("adb shell input text " + "adaptive")
             time.sleep(2)
             base_lib.go_back()
-            base_lib.click_on_text_id(settings_locators.display_option_text, settings_locators.display_option_id)
+            base_lib.click_on_id(settings_locators.adaptive_option_text, settings_locators.adaptive_option_id)
             time.sleep(3)
 
-        base_lib.click_on_text_id(settings_locators.adaptive_brightness_option_text, settings_locators.adaptive_brightness_option_id)
-        time.sleep(2)
         result_ab = base_lib.element_exists(settings_locators.status_off, settings_locators.adaptive_brightness_switch_id)
-        if result_ab == True:
-            base_lib.click_on_text_id(settings_locators.status_off, settings_locators.adaptive_brightness_switch_id)
+    
+        base_lib.click_on_id("android:id/switch_widget","android.widget.Switch")
         time.sleep(2)
-        return True
-
     except Exception as e:
         print("Exception occured: ", str(e))
         return False
@@ -247,23 +211,6 @@ def LAUNCH_DROZER():
     except Exception as e:
         print("Exception occured: ",str(e))
         return False
-
-@keyword
-def CHANGE_FONT_SIZE():
-    try:
-        time.sleep(2)
-        base_lib.click_on_id("com.android.settings:id/search_action_bar", "android.view.ViewGroup")
-        time.sleep(2)
-        os.system("adb shell input text " + "display size")
-        time.sleep(2)
-        base_lib.go_back()
-        base_lib.click_on_text_id(settings_locators.displaysize_option_text, settings_locators.displaysize_option_id)
-        time.sleep(3)
-
-    except Exception as e:
-        print("Exception occured: ",str(e))
-        return False
-
 
 
 
