@@ -23,4 +23,3 @@ Test 001 - Launch Drozer
     ${result}     LAUNCH_DROZER
     ${result}     CHECK_STATUS
     run keyword if  ${result}==False    Fail   Enabling_Wifi_Failed    ELSE    LOG    PASS
-
