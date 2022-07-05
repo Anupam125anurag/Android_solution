@@ -19,23 +19,23 @@ connect = os.popen("adb connect "+device).read()
 
 
 # gradle build apk and install apk
-#uninstall = os.popen("adb uninstall com.example.mytcsapp1")
-#os.system("./gradlew installDebug ")
-#time.sleep((1000*10)/1000)
+uninstall = os.popen("adb uninstall com.example.mytcsapp1")
+os.system("./gradlew installDebug ")
+time.sleep((1000*10)/1000)
 
 #testing and collecting logcat
 
-#os.system("adb shell monkey -p com.example.mytcsapp1 -v 2000 2> Monkeylogs.txt")
-#time.sleep((1000*10)/1000)
+os.system("adb shell monkey -p com.example.mytcsapp1 -v 2000 2> Monkeylogs.txt")
+time.sleep((1000*10)/1000)
 
 #drozer - Pentesting
 print("Pentesting - Drozer started")
-#time.sleep((1000*1)/1000)
+time.sleep((1000*1)/1000)
 
-#os.system("robot tests/z_drozer.robot")
-#os.system("adb forward tcp:31415 tcp:31415")
-#os.system("drozer console connect --command 'run scanner.provider.finduris -a com.google.android.partnersetup'> drozerlog.txt")
-#os.system("drozer console connect -c 'run app.provider.query content://com.google.settings/partner/' >> drozerlog.txt")
+os.system("robot tests/z_drozer.robot")
+os.system("adb forward tcp:31415 tcp:31415")
+os.system("drozer console connect --command 'run scanner.provider.finduris -a com.google.android.partnersetup'> drozerlog.txt")
+os.system("drozer console connect -c 'run app.provider.query content://com.google.settings/partner/' >> drozerlog.txt")
 
 print("Pentesting - Drozer completed")
 
