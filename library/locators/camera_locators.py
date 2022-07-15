@@ -2,8 +2,8 @@
 
 appname='Camera'
 camera_className="android.widget.TextView"
-camera_click_resourceID = 'com.android.camera2:id/shutter_button'
-camera_click_classname ='android.widget.ImageView'
+camera_click_resourceID = 'com.google.android.GoogleCamera:id/shutter_button'
+camera_click_classname ='android.widget.ImageButton'
 camera_Image_Delete_iconID ='com.android.camera2:id/filmstrip_bottom_control_delete'
 camera_Image_Delete_iconclass ='android.widget.ImageButton'
 round_thumbnail_ID="com.android.camera2:id/rounded_thumbnail_view"
