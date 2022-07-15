@@ -188,7 +188,7 @@ def open_notification():
 
 def close_app(): #n refers to number of apps opened
     go_to_home()
-    open_recent_apps()
+   
     time.sleep(2)
     if GET_DEVICE_NAME()=="msmnile\n":
        time.sleep(1)
