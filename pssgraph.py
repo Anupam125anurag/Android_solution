@@ -1,12 +1,13 @@
 import os
 from matplotlib import pyplot as plt    
+%matplotlib inline
 
 os.system("robot tests/camera_testcases.robot")
-os.system("adb shell dumpsys meminfo com.google.android.GoogleCamera > CAPpics1.txt")
+os.system("adb shell dumpsys meminfo com.google.android.GoogleCamera > CAPpics.txt")
 
-for i in range(0,60):
+for i in range(0,5):
     os.system("robot tests/camera_testcases.robot")
-    os.system("adb shell dumpsys meminfo com.google.android.GoogleCamera >> CAPpics1.txt")
+    os.system("adb shell dumpsys meminfo com.google.android.GoogleCamera >> CAPpics.txt")
     print(i)
 
 # to get PSS values
