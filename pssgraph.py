@@ -1,6 +1,6 @@
 import os
 from matplotlib import pyplot as plt    
-%matplotlib inline
+
 
 os.system("robot tests/camera_testcases.robot")
 os.system("adb shell dumpsys meminfo com.google.android.GoogleCamera > CAPpics.txt")
