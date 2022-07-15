@@ -76,4 +76,5 @@ plt.title("PSS and RSS values")
 plt.legend()
   
 # To load the display window
-plt.show()
+#plt.show()
+plt.savefig('pss_rss_graph.png')
