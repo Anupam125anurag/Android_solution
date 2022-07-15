@@ -9,7 +9,7 @@ ROBOT_AUTO_KEYWORDS = False
 
 #configure = yaml.safe_load(open('test_data.yaml'))
 #devicename = configure['Device_Serial']['Serial']
-d = Device("98171FFBA00462", adb_server_host='127.0.0.1', adb_server_port=5037)
+d = Device("551ebb13", adb_server_host='127.0.0.1', adb_server_port=5037)
 
 @keyword
 def START_TEST():
