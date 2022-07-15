@@ -32,38 +32,4 @@ Test_001 - Capture Image
     ${result}     CAPTURE_IMAGE
     run keyword if  ${result}==False    Fail    Image_Capture_Failed    ELSE    LOG    PASS
 
-
-Camera_Test_002_Verify_and_Delete_IMAGE()
-    #launch camera
-    #${result}     LAUNCH_APP     ${appname}
-    ${result}     LAUNCH_CAMERA
-    ${result}     CAPTURE_IMAGE
-    ${result}    Verify_and_Delete_IMAGE
-    run keyword if  ${result}==False    Fail    Image_Verification_Failed    ELSE    LOG    PASS
-
-Camera_Test_003_Set_Timer
-    #launch camera
-    #${result}     LAUNCH_APP     ${appname}
-    ${result}     LAUNCH_CAMERA
-    ${result}     Set_Timer      ${t}
-    ${result}      CAPTURE_IMAGE
-    run keyword if  ${result}==False    Fail    Set_Timer_Failed    ELSE    LOG    PASS
-
-
-Camera_Test_004_Front_CAMERA
-    #launch camera
-    #${result}     LAUNCH_APP     ${appname}
-    ${result}     LAUNCH_CAMERA
-    ${result}     Front_CAMERA
-    ${result}      CAPTURE_IMAGE
-    run keyword if  ${result}==False    Fail    Front_CAMERA_Failed    ELSE    LOG    PASS
-
-
-Camera_Test_005_Launch_Video
-     #launch camera
-    #${result}     LAUNCH_APP     ${appname}
-    ${result}     LAUNCH_CAMERA
-    ${result}     LAUNCH_Video
-
-    run keyword if  ${result}==False    Fail    Launch_Video_Failed    ELSE    LOG    PASS
-
+ 
