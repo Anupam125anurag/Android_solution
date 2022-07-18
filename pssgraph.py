@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 os.system("robot tests/camera_testcases.robot")
 os.system("adb shell dumpsys meminfo com.google.android.GoogleCamera > CAPpics.txt")
 
-for i in range(0,5):
+for i in range(0,50):
     os.system("robot tests/camera_testcases.robot")
     os.system("adb shell dumpsys meminfo com.google.android.GoogleCamera >> CAPpics.txt")
     print(i)
